@@ -69,3 +69,11 @@ c.setalg("JetSelector", {"m_name": "BaselineJets",
                               "m_outContainerName": jets_select,
                               "m_pass_min": 2,
                               "m_cleanJets": True})
+
+''' Start dumping information of what we have so far... '''
+c.setalg("TreeAlgo", {"m_debug": False,
+                      "m_name": "ASGExample1",
+                      "m_jetContainerName": jets_select,
+                      "m_jetDetailStr": "kinematic energy scales substructure flavorTag sfFTagFix7085",
+                      "m_electronContainerName": electrons_select,
+                      "m_electonDetailStr": "kinematic isolation PID"})
