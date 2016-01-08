@@ -39,5 +39,4 @@ Running
 
 You can run the code on an example file::
 
-  xAH_run.py --files /share/t3data3/kratsg/xAODs/HFSF/pflowTest.root \
-             --config ASG_AnalysisFrameworkReview/data/config.py direct
+  xAH_run.py --files input.root --config ASG_AnalysisFrameworkReview/data/example1.py direct
