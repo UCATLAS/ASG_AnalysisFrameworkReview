@@ -14,3 +14,22 @@ c.setalg("BasicEventSelection", {"m_name": "BasicEventSelection",
                                  "m_checkDuplicatesData": False,
                                  "m_checkDuplicatesMC": False})
 
+# add in calibrations for electrons and jets here
+
+# end add in calibrations for electrons and jets here
+
+c.setalg("ElectronSelector", {"m_name": "BaselineElectrons",
+                              "m_inContainerName": "Electrons",
+                              "m_decorateSelectedObjects": False,
+                              "m_createSelectedContainer": True,
+                              "m_outContainerName": "ElectronsBaseline",
+                              "m_pass_min": 2})
+
+c.setalg("JetSelector", {"m_name": "BaselineJets",
+                              "m_inContainerName": "AntiKt4EMTopoJets",
+                              "m_decorateSelectedObjects": False,
+                              "m_createSelectedContainer": True,
+                              "m_outContainerName": "AntiKt4EMTopoJetsBaseline",
+                              "m_pass_min": 2,
+                              "m_cleanJets": False})
+
