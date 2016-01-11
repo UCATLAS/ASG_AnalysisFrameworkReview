@@ -49,7 +49,7 @@ c.setalg("JetCalibrator", {"m_name": "JetCalibrator",
                            "m_JERApplyNominal": False,
                            "m_JERFullSys": False,
                            "m_jetCleanCutLevel": "LooseBad",
-                           "m_jetcleanUgly": False,
+                           "m_jetCleanUgly": False,
                            "m_cleanParent": False,
                            "m_saveAllCleanDecisions": True,
                            "m_redoJVT": True})
@@ -60,6 +60,7 @@ c.setalg("ElectronSelector", {"m_name": "BaselineElectrons",
                               "m_decorateSelectedObjects": False,
                               "m_createSelectedContainer": True,
                               "m_outContainerName": electrons_select,
+                              "m_debug":False,
                               "m_pass_min": 2})
 
 c.setalg("JetSelector", {"m_name": "BaselineJets",
@@ -68,12 +69,20 @@ c.setalg("JetSelector", {"m_name": "BaselineJets",
                               "m_createSelectedContainer": True,
                               "m_outContainerName": jets_select,
                               "m_pass_min": 2,
+                              "m_debug":False,
                               "m_cleanJets": True})
 
+c.setalg("MyAnalysisAlgo",  {"m_name" : "MyAnalysisExample",
+                            "m_debug"     : False,
+                            "m_inContainerName_Electrons" : electrons_select,
+                            "m_inContainerName_Jets"   : jets_select})
+
+
 ''' Start dumping information of what we have so far... '''
-c.setalg("TreeAlgo", {"m_debug": False,
-                      "m_name": "ASGExample1",
-                      "m_jetContainerName": jets_select,
-                      "m_jetDetailStr": "kinematic energy scales substructure flavorTag sfFTagFix7085",
-                      "m_electronContainerName": electrons_select,
-                      "m_electonDetailStr": "kinematic isolation PID"})
+c.setalg("MyAnalysisTreeAlgo", {"m_debug": False,
+                                "m_name": "MyAnalysisTreeExample",
+                                "m_evtDetailStr"       : "electronSF",
+                                "m_jetContainerName"      : jets_select,
+                                "m_jetDetailStr" : "kinematic",
+                                "m_elContainerName": electrons_select,
+                                "m_elDetailStr": "kinematic"})
