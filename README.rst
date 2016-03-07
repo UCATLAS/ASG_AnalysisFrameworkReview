@@ -23,7 +23,7 @@ This depends on the analysis framework ``xAODAnaHelpers``::
   git clone https://github.com/UCATLAS/ASG_AnalysisFrameworkReview
   mv ASG_AnalysisFrameworkReview MyAnalysis
   git clone https://github.com/UCATLAS/xAODAnaHelpers
-  cd xAODAnaHelpers && git checkout 00-03-28 && cd -
+  cd xAODAnaHelpers && git checkout 00-03-29 && cd -
   python xAODAnaHelpers/scripts/checkoutASGtags.py 2.3.38
 
 
