@@ -19,7 +19,11 @@ Dependencies
 
 This depends on the analysis framework ``xAODAnaHelpers``::
 
+  rcSetup Base,2.3.38
+  git clone git@github.com:UCATLAS/ASG_AnalysisFrameworkReview
+  mv ASG_AnalysisFrameworkReview MyAnalysis
   git clone git@github.com:UCATLAS/xAODAnaHelpers
+  cd xAODAnaHelpers && git checkout 00-03-28 && cd -
   python xAODAnaHelpers/scripts/checkoutASGtags.py 2.3.38
 
 
